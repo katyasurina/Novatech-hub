@@ -1,0 +1,34 @@
+{
+  "name": "novatech-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NovaTech Hub — community-driven gadget review & rating platform (monorepo)",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run db:ensure && concurrently -n api,web -c blue,magenta \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "npm run dev -w @novatech/api",
+    "dev:web": "npm run dev -w @novatech/web",
+    "db:ensure": "npm run pg:start -w @novatech/api",
+    "db:start": "npm run pg:start -w @novatech/api",
+    "db:stop": "npm run pg:stop -w @novatech/api",
+    "db:kill": "npm run pg:kill -w @novatech/api",
+    "db:setup": "npm run db:setup -w @novatech/api",
+    "db:migrate": "npm run db:migrate -w @novatech/api",
+    "db:seed": "npm run db:seed -w @novatech/api",
+    "build": "npm run build -w @novatech/api && npm run build -w @novatech/web",
+    "typecheck": "npm run typecheck -w @novatech/shared && npm run typecheck -w @novatech/api && npm run typecheck -w @novatech/web",
+    "test": "npm run test -w @novatech/api"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "rollup": "^4.63.2"
+  }
+}

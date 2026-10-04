@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <radialGradient id="g13" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </radialGradient>
+  </defs>
+  <rect x="185" y="180" width="30" height="60" fill="#78716c"/>
+  <rect x="160" y="230" width="80" height="10" rx="5" fill="#57534e"/>
+  <ellipse cx="200" cy="120" rx="60" ry="50" fill="url(#g13)" opacity="0.9"/>
+  <ellipse cx="200" cy="120" rx="40" ry="30" fill="#fef3c7" opacity="0.6"/>
+  <text x="200" y="270" text-anchor="middle" fill="#fef3c7" font-family="system-ui" font-size="14">Aurora Lamp</text>
+</svg>

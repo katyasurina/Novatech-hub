@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   Theme tokens. Light and dark are two token sets swapped by `.dark` on <html>.
+   Tailwind's `surface`/`ink` colors above resolve to these CSS variables so a
+   component never has to know which theme is active.
+--------------------------------------------------------------------------- */
+
+:root {
+  color-scheme: light;
+  --surface: 248 250 252;
+  --surface-raised: 255 255 255;
+  --surface-overlay: 15 23 42;
+  --ink: 15 23 42;
+  --ink-muted: 71 85 105;
+  --ink-faint: 148 163 184;
+  --line: 226 232 240;
+  --brand-hue: 244;
+  --accent-warm: 245 158 11;   /* amber-500 for warmth */
+  --accent-cool: 99 102 241;   /* indigo-500 brand */
+  --accent-rose: 244 63 94;    /* rose-500 for alerts/hearts */
+}
+
+.dark {
+  color-scheme: dark;
+  --surface: 15 23 42;
+  --surface-raised: 30 41 59;
+  --surface-overlay: 2 6 23;
+  --ink: 241 245 249;
+  --ink-muted: 148 163 184;
+  --ink-faint: 100 116 139;
+  --line: 51 65 85;
+  --accent-warm: 251 191 36;
+  --accent-cool: 129 140 248;
+  --accent-rose: 251 113 133;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-surface text-ink font-sans;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  ::selection {
+    background: rgb(var(--brand-accent));
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid var(--focus-ring, #6366f1);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* Scrollbars that respect the theme. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--line)) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgb(var(--line));
+  border-radius: 999px;
+}
+
+@layer components {
+  /* Skeleton loading blocks share one shimmer. */
+  .skeleton {
+    @apply animate-shimmer rounded-md bg-gradient-to-r from-line/70 via-line to-line/70;
+    background-size: 200% 100%;
+  }
+
+  .card {
+    @apply rounded-xl border border-line bg-surface-raised shadow-card;
+  }
+
+  /* Accessible focus ring utility used by our interactive primitives. */
+  .focus-ring {
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500;
+  }
+
+  /* Reduced-motion users skip decorative animation. */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in,
+    .animate-rise-in,
+    .animate-pop-in,
+    .animate-shimmer {
+      animation-duration: 0.01ms;
+      animation-iteration-count: 1;
+    }
+  }
+}
+
+:root {
+  --brand-accent: #6366f1;
+}
+.dark {
+  --brand-accent: #818cf8;
+}

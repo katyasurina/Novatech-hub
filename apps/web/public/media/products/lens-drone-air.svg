@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g32" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <rect x="170" y="120" width="60" height="40" rx="8" fill="url(#g32)"/>
+  <line x1="150" y1="120" x2="110" y2="90" stroke="#60a5fa" stroke-width="3"/>
+  <line x1="250" y1="120" x2="290" y2="90" stroke="#60a5fa" stroke-width="3"/>
+  <line x1="150" y1="160" x2="110" y2="190" stroke="#60a5fa" stroke-width="3"/>
+  <line x1="250" y1="160" x2="290" y2="190" stroke="#60a5fa" stroke-width="3"/>
+  <circle cx="110" cy="90" r="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="290" cy="90" r="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="110" cy="190" r="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="290" cy="190" r="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="200" cy="140" r="8" fill="#1e3a5f"/>
+  <text x="200" y="270" text-anchor="middle" fill="#bfdbfe" font-family="system-ui" font-size="14">Lens Drone Air</text>
+</svg>

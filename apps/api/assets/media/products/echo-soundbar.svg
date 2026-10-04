@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+  </defs>
+  <rect x="60" y="110" width="280" height="60" rx="12" fill="url(#g3)"/>
+  <rect x="80" y="125" width="20" height="30" rx="4" fill="#fecdd3"/>
+  <rect x="110" y="120" width="20" height="40" rx="4" fill="#fecdd3"/>
+  <rect x="140" y="115" width="20" height="50" rx="4" fill="#fecdd3"/>
+  <rect x="170" y="118" width="20" height="44" rx="4" fill="#fecdd3"/>
+  <rect x="200" y="115" width="20" height="50" rx="4" fill="#fecdd3"/>
+  <rect x="230" y="120" width="20" height="40" rx="4" fill="#fecdd3"/>
+  <rect x="260" y="125" width="20" height="30" rx="4" fill="#fecdd3"/>
+  <circle cx="200" cy="210" r="15" fill="#fb7185"/>
+  <text x="200" y="260" text-anchor="middle" fill="#fecdd3" font-family="system-ui" font-size="14">Echo Soundbar</text>
+</svg>

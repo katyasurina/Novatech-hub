@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g17" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+  <rect x="155" y="100" width="90" height="110" rx="12" fill="url(#g17)"/>
+  <circle cx="200" cy="140" r="20" fill="#1e293b"/>
+  <circle cx="200" cy="140" r="15" fill="none" stroke="#818cf8" stroke-width="3"/>
+  <rect x="195" y="155" width="10" height="25" rx="5" fill="#818cf8"/>
+  <rect x="165" y="195" width="70" height="8" rx="4" fill="#312e81"/>
+  <text x="200" y="270" text-anchor="middle" fill="#c7d2fe" font-family="system-ui" font-size="14">Aegis Lock Pro</text>
+</svg>

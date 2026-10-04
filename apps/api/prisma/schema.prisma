@@ -1,0 +1,130 @@
+// NovaTech Hub — database schema.
+// Money is stored as integer minor units (priceMinor = cents) — the canonical
+// pattern for exacy money; no floats, no Decimal rounding surprises.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum Category {
+  AUDIO
+  WEARABLES
+  SMART_HOME
+  MOBILE
+  COMPUTING
+  PHOTOGRAPHY
+}
+
+/// Visible = shown publicly. Suspended = admin-moderated off (kept, for review).
+enum ReviewVisibility {
+  VISIBLE
+  SUSPENDED
+}
+
+model User {
+  id                   String    @id @default(cuid())
+  email                String    @unique
+  username             String    @unique
+  passwordHash         String
+  name                 String?
+  bio                  String?   @db.Text
+  avatarUrl            String?
+  role                 Role      @default(USER)
+  /// Bumped on every refresh + logout. A refresh token becomes invalid the
+  /// moment a newer one is issued — this is how "refresh rotation" revokes.
+  refreshTokenVersion  Int       @default(0)
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  reviews              Review[]
+  votes                ReviewVote[]
+  wishlist             WishlistItem[]
+
+  @@index([username])
+}
+
+model Product {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  name        String
+  tagline     String
+  description String    @db.Text
+  category    Category
+  brand       String
+  /// Integer cents — never store money as a float.
+  priceMinor  Int
+  currency    String    @default("USD")
+  imageUrl    String
+  /// text[] gallery; detail page renders imageUrl first, then these.
+  galleryUrls String[]  @default([])
+  /// Key/value spec sheet rendered on the detail page (jsonb).
+  specs       Json
+  releaseDate DateTime?
+  featured    Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  reviews     Review[]
+  wishlists   WishlistItem[]
+
+  @@index([category, priceMinor])
+  @@index([featured, createdAt])
+  @@index([slug])
+}
+
+model Review {
+  id        String           @id @default(cuid())
+  productId String
+  userId    String
+  rating    Int // 1..10 (enforced by Zod at the boundary too)
+  title     String
+  body      String           @db.Text
+  visibility ReviewVisibility @default(VISIBLE)
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  votes   ReviewVote[]
+
+  // One review per user per product.
+  @@unique([productId, userId])
+  @@index([productId, visibility, createdAt])
+  @@index([userId])
+}
+
+model ReviewVote {
+  id        String   @id @default(cuid())
+  reviewId  String
+  userId    String
+  /// +1 or -1. Postgres CHECK would be nicer; enforced in app layer + service.
+  value     Int
+  createdAt DateTime @default(now())
+
+  review Review @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([reviewId, userId])
+  @@index([userId])
+}
+
+model WishlistItem {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  createdAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId])
+  @@index([userId])
+}

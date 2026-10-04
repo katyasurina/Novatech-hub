@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <radialGradient id="g4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </radialGradient>
+  </defs>
+  <circle cx="200" cy="140" r="70" fill="url(#g4)"/>
+  <circle cx="200" cy="140" r="50" fill="#1c1917"/>
+  <circle cx="200" cy="140" r="35" fill="url(#g4)" opacity="0.6"/>
+  <circle cx="200" cy="140" r="20" fill="#1c1917"/>
+  <ellipse cx="200" cy="230" rx="40" ry="10" fill="#7c2d12" opacity="0.5"/>
+  <text x="200" y="270" text-anchor="middle" fill="#fed7aa" font-family="system-ui" font-size="14">Halo Speaker 360</text>
+</svg>

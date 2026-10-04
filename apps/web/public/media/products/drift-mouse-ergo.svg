@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <ellipse cx="200" cy="150" rx="45" ry="65" fill="#3f3f46" transform="rotate(-15 200 150)"/>
+  <ellipse cx="200" cy="150" rx="35" ry="55" fill="#27272a" transform="rotate(-15 200 150)"/>
+  <line x1="200" y1="90" x2="200" y2="130" stroke="#52525b" stroke-width="2"/>
+  <circle cx="200" cy="100" r="4" fill="#52525b"/>
+  <text x="200" y="270" text-anchor="middle" fill="#d4d4d8" font-family="system-ui" font-size="14">Drift Mouse Ergo</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g30" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect x="100" y="100" width="200" height="60" rx="8" fill="#27272a"/>
+  <rect x="110" y="110" width="30" height="40" rx="4" fill="url(#g30)"/>
+  <rect x="150" y="110" width="30" height="40" rx="4" fill="#52525b"/>
+  <rect x="190" y="110" width="30" height="40" rx="4" fill="#52525b"/>
+  <rect x="230" y="110" width="30" height="40" rx="4" fill="#52525b"/>
+  <rect x="270" y="110" width="20" height="40" rx="4" fill="#f59e0b"/>
+  <rect x="100" y="165" width="200" height="5" rx="2" fill="#52525b"/>
+  <text x="200" y="270" text-anchor="middle" fill="#fde68a" font-family="system-ui" font-size="14">ThunderBay TB4</text>
+</svg>

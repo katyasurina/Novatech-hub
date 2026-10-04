@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" fill="none">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b2d3a"/>
+      <stop offset="1" stop-color="#17181f"/>
+    </linearGradient>
+    <linearGradient id="body2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#262844"/>
+      <stop offset="1" stop-color="#17181f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <radialGradient id="hl" cx="0.5" cy="0.32" r="0.75">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+    <circle cx="200" cy="150" r="180" fill="url(#hl)" opacity="0.9"/>
+    <ellipse cx="200" cy="308" rx="120" ry="14" fill="#000" opacity="0.45"/>
+    <rect x="96" y="140" width="208" height="140" rx="24" fill="url(#body)"/>
+    <rect x="96" y="140" width="208" height="140" rx="24" fill="url(#hl)"/>
+    <rect x="126" y="112" width="40" height="40" rx="8" fill="url(#body2)"/>
+    <circle cx="200" cy="212" r="48" fill="#0c0d12" stroke="url(#accent)" stroke-width="4"/>
+    <circle cx="200" cy="212" r="34" fill="#14161d"/>
+    <circle cx="200" cy="212" r="20" fill="url(#accent)" opacity="0.95"/>
+    <circle cx="200" cy="212" r="9" fill="#fff" opacity="0.35"/>
+    <rect x="140" y="268" width="62" height="24" rx="8" fill="url(#accent)" opacity="0.85"/>
+  </svg>

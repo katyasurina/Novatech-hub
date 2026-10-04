@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g20" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect x="130" y="90" width="140" height="100" rx="16" fill="#1e293b"/>
+  <rect x="140" y="100" width="50" height="30" rx="6" fill="url(#g20)"/>
+  <text x="165" y="120" text-anchor="middle" fill="#fff" font-family="system-ui" font-size="12">20K</text>
+  <rect x="140" y="140" width="120" height="8" rx="4" fill="#334155"/>
+  <rect x="140" y="140" width="90" height="8" rx="4" fill="#f59e0b"/>
+  <rect x="200" y="110" width="20" height="4" rx="2" fill="#475569"/>
+  <rect x="200" y="120" width="20" height="4" rx="2" fill="#475569"/>
+  <text x="200" y="270" text-anchor="middle" fill="#fde68a" font-family="system-ui" font-size="14">Ark Power Bank 20K</text>
+</svg>

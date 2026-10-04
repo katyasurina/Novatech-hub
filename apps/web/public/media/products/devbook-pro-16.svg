@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <rect x="100" y="70" width="200" height="120" rx="8" fill="#27272a"/>
+  <rect x="108" y="78" width="184" height="104" rx="4" fill="#3f3f46"/>
+  <rect x="120" y="180" width="160" height="8" rx="4" fill="#52525b"/>
+  <rect x="80" y="188" width="240" height="12" rx="6" fill="#3f3f46"/>
+  <circle cx="200" cy="88" r="3" fill="#27272a"/>
+  <text x="200" y="270" text-anchor="middle" fill="#d4d4d8" font-family="system-ui" font-size="14">DevBook Pro 16</text>
+</svg>

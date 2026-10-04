@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <rect x="110" y="70" width="180" height="115" rx="8" fill="#27272a"/>
+  <rect x="117" y="77" width="166" height="101" rx="4" fill="#52525b"/>
+  <rect x="125" y="175" width="150" height="7" rx="3.5" fill="#71717a"/>
+  <rect x="90" y="182" width="220" height="10" rx="5" fill="#3f3f46"/>
+  <circle cx="200" cy="86" r="2.5" fill="#27272a"/>
+  <text x="200" y="270" text-anchor="middle" fill="#d4d4d8" font-family="system-ui" font-size="14">DevBook Air 13</text>
+</svg>

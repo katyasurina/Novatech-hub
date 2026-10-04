@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+  <rect x="155" y="50" width="90" height="30" rx="8" fill="#475569"/>
+  <rect x="160" y="80" width="80" height="120" rx="16" fill="#1e293b"/>
+  <circle cx="200" cy="140" r="35" fill="url(#g7)" opacity="0.3"/>
+  <text x="200" y="145" text-anchor="middle" fill="#818cf8" font-family="system-ui" font-size="11">12:45</text>
+  <rect x="155" y="200" width="90" height="30" rx="8" fill="#475569"/>
+  <text x="200" y="270" text-anchor="middle" fill="#c7d2fe" font-family="system-ui" font-size="14">Pulse Watch S2</text>
+</svg>

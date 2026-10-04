@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g33" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#52525b"/>
+      <stop offset="50%" stop-color="#3f3f46"/>
+      <stop offset="100%" stop-color="#52525b"/>
+    </linearGradient>
+  </defs>
+  <rect x="155" y="60" width="90" height="160" rx="10" fill="url(#g33)"/>
+  <circle cx="200" cy="130" r="35" fill="#27272a"/>
+  <circle cx="200" cy="130" r="28" fill="#18181b"/>
+  <circle cx="200" cy="130" r="22" fill="#3f3f46"/>
+  <circle cx="200" cy="130" r="12" fill="#6366f1" opacity="0.6"/>
+  <rect x="160" y="200" width="80" height="10" rx="3" fill="#27272a"/>
+  <text x="200" y="270" text-anchor="middle" fill="#d4d4d8" font-family="system-ui" font-size="14">Prisma 50mm f/1.4</text>
+</svg>

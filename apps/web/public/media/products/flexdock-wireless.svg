@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g22" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="200" cy="150" rx="80" ry="30" fill="url(#g22)"/>
+  <ellipse cx="200" cy="150" rx="60" ry="20" fill="#312e81"/>
+  <circle cx="200" cy="150" r="8" fill="#818cf8"/>
+  <path d="M200 120 L200 90" stroke="#818cf8" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M200 180 L200 210" stroke="#818cf8" stroke-width="2" stroke-dasharray="4 4"/>
+  <ellipse cx="200" cy="210" rx="30" ry="5" fill="#312e81" opacity="0.5"/>
+  <text x="200" y="270" text-anchor="middle" fill="#c7d2fe" font-family="system-ui" font-size="14">FlexDock Wireless</text>
+</svg>

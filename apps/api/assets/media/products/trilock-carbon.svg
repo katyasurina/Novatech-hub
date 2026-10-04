@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <line x1="200" y1="60" x2="200" y2="200" stroke="#52525b" stroke-width="4"/>
+  <line x1="200" y1="200" x2="140" y2="230" stroke="#52525b" stroke-width="3"/>
+  <line x1="200" y1="200" x2="260" y2="230" stroke="#52525b" stroke-width="3"/>
+  <line x1="200" y1="200" x2="200" y2="240" stroke="#52525b" stroke-width="3"/>
+  <rect x="185" y="55" width="30" height="15" rx="3" fill="#3f3f46"/>
+  <circle cx="200" cy="195" r="8" fill="#27272a"/>
+  <text x="200" y="270" text-anchor="middle" fill="#d4d4d8" font-family="system-ui" font-size="14">TriLock Carbon Tripod</text>
+</svg>

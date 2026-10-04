@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="200" cy="140" rx="90" ry="70" fill="url(#g2)"/>
+  <rect x="120" y="100" width="160" height="30" rx="15" fill="#164e63"/>
+  <circle cx="150" cy="115" r="8" fill="#06b6d4"/>
+  <circle cx="250" cy="115" r="8" fill="#06b6d4"/>
+  <path d="M140 180 Q200 220 260 180" stroke="#22d3ee" stroke-width="4" fill="none"/>
+  <text x="200" y="260" text-anchor="middle" fill="#cffafe" font-family="system-ui" font-size="14">Voyager ANC X</text>
+</svg>

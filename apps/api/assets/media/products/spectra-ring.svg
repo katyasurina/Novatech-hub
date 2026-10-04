@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <circle cx="200" cy="140" r="50" fill="none" stroke="url(#g9)" stroke-width="12"/>
+  <circle cx="200" cy="140" r="38" fill="#1e1b4b"/>
+  <circle cx="200" cy="140" r="44" fill="none" stroke="#c084fc" stroke-width="2" stroke-dasharray="8 4"/>
+  <text x="200" y="270" text-anchor="middle" fill="#e9d5ff" font-family="system-ui" font-size="14">Spectra Ring</text>
+</svg>

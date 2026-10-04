@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+
+# builds & output
+dist/
+dist-ssr/
+*.tsbuildinfo
+coverage/
+
+# environment (never commit secrets)
+**/.env
+!.env.example
+
+# local data (embedded postgres)
+.local/
+
+# runtime uploads (avatars + seed-generated art are regenerable)
+apps/api/uploads/
+
+# logs
+*.log
+npm-debug.log*
+
+# editor / os
+.DS_Store
+Thumbs.db
+*.swp

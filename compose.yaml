@@ -1,0 +1,24 @@
+# Optional Postgres for machines with Docker.
+# The default local dev path uses EMBEDDED_PG (no Docker required) — see README.
+# Usage: docker compose up -d  (then create the database, e.g. via: docker exec -it novatech-pg createdb novatech_hub)
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: novatech-pg
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: novatech_hub
+    ports:
+      - "5433:5432"
+    volumes:
+      - novatech_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d novatech_hub"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  novatech_pgdata:

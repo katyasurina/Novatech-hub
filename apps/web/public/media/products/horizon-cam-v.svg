@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g31" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+  <rect x="120" y="90" width="160" height="110" rx="12" fill="#27272a"/>
+  <circle cx="220" cy="140" r="40" fill="#18181b"/>
+  <circle cx="220" cy="140" r="32" fill="url(#g31)"/>
+  <circle cx="220" cy="140" r="20" fill="#18181b"/>
+  <circle cx="220" cy="140" r="10" fill="#818cf8"/>
+  <rect x="130" y="100" width="30" height="20" rx="4" fill="#475569"/>
+  <rect x="120" y="200" width="60" height="12" rx="4" fill="#3f3f46"/>
+  <text x="200" y="270" text-anchor="middle" fill="#c7d2fe" font-family="system-ui" font-size="14">Horizon Cam V</text>
+</svg>

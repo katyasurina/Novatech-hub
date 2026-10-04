@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g21" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+  </defs>
+  <rect x="160" y="80" width="80" height="120" rx="12" fill="#1e293b"/>
+  <rect x="170" y="90" width="60" height="60" rx="8" fill="url(#g21)"/>
+  <text x="200" y="128" text-anchor="middle" fill="#1e293b" font-family="system-ui" font-size="16">65W</text>
+  <rect x="185" y="160" width="30" height="30" rx="4" fill="#475569"/>
+  <rect x="175" y="205" width="50" height="8" rx="4" fill="#334155"/>
+  <text x="200" y="270" text-anchor="middle" fill="#fef08a" font-family="system-ui" font-size="14">Volt Charger 65W</text>
+</svg>

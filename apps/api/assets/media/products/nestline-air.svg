@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g18" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect x="160" y="80" width="80" height="140" rx="40" fill="url(#g18)" opacity="0.8"/>
+  <rect x="170" y="90" width="60" height="30" rx="15" fill="#065f46"/>
+  <line x1="175" y1="140" x2="225" y2="140" stroke="#34d399" stroke-width="2"/>
+  <line x1="175" y1="155" x2="225" y2="155" stroke="#34d399" stroke-width="2"/>
+  <line x1="175" y1="170" x2="225" y2="170" stroke="#34d399" stroke-width="2"/>
+  <ellipse cx="200" cy="240" rx="25" ry="5" fill="#065f46" opacity="0.5"/>
+  <text x="200" y="275" text-anchor="middle" fill="#a7f3d0" font-family="system-ui" font-size="14">Nestline Air Purifier</text>
+</svg>

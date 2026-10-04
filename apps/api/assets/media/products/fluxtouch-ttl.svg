@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g34" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect x="155" y="70" width="90" height="120" rx="10" fill="#27272a"/>
+  <rect x="165" y="80" width="70" height="50" rx="6" fill="url(#g34)"/>
+  <rect x="175" y="140" width="50" height="10" rx="3" fill="#3f3f46"/>
+  <rect x="185" y="155" width="30" height="15" rx="3" fill="#52525b"/>
+  <circle cx="200" cy="220" r="15" fill="#27272a" stroke="#52525b" stroke-width="2"/>
+  <text x="200" y="270" text-anchor="middle" fill="#fef3c7" font-family="system-ui" font-size="14">FluxTouch TTL</text>
+</svg>

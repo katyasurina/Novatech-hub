@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#0f172a" width="400" height="300"/>
+  <defs>
+    <linearGradient id="g10" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect x="100" y="120" width="200" height="40" rx="20" fill="url(#g10)"/>
+  <circle cx="140" cy="140" r="12" fill="#312e81"/>
+  <circle cx="200" cy="140" r="12" fill="#312e81"/>
+  <circle cx="260" cy="140" r="12" fill="#312e81"/>
+  <ellipse cx="200" cy="220" rx="80" ry="20" fill="#312e81" opacity="0.5"/>
+  <text x="200" y="270" text-anchor="middle" fill="#c7d2fe" font-family="system-ui" font-size="14">Levitate Sleep Band</text>
+</svg>
