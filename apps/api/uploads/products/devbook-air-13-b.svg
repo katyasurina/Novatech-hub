@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="DevBook Air 13">
+  <defs>
+    <linearGradient id="g" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4338ca"/>
+      <stop offset="1" stop-color="#6d28d9"/>
+    </linearGradient>
+  </defs>
+  <rect x="240" y="120" width="320" height="320" rx="48" fill="url(#g)" opacity="0.13"/>
+  <rect x="240" y="120" width="320" height="320" rx="48" fill="none" stroke="url(#g)" stroke-opacity="0.4"/>
+  <text x="400" y="285" text-anchor="middle" font-family="system-ui,sans-serif" font-size="44" font-weight="700" fill="#e2e8f0">NOVATECH</text>
+</svg>

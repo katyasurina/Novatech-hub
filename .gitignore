@@ -15,7 +15,7 @@ coverage/
 .local/
 
 # runtime uploads (avatars + seed-generated art are regenerable)
-apps/api/uploads/
+#apps/api/uploads/
 
 # logs
 *.log
