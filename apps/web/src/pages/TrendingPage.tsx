@@ -6,6 +6,7 @@ import { fetchTrending } from '../api/home';
 import { CATEGORY_LABELS } from '@novatech/shared';
 import { SkeletonList } from '../components/ui/Skeleton';
 import { ErrorState } from '../components/ui/ErrorState';
+import { mediaUrl } from '../lib/media';
 import { EmptyState } from '../components/ui/EmptyState';
 import { ScoreBreakdown } from '../components/product/ScoreBreakdown';
 import { RatingDisplay } from '../components/ui/Ratings';
@@ -115,7 +116,7 @@ function TrendingRow({ product, rank }: { product: TrendingProduct; rank: number
       </div>
 
       <Link to={`/p/${product.slug}`} className="focus-ring block shrink-0">
-        <ProgressiveImage src={product.imageUrl} alt={product.name} className="h-24 w-full rounded-lg sm:w-32" />
+        <ProgressiveImage src={mediaUrl(product.imageUrl)} alt={product.name} className="h-24 w-full rounded-lg sm:w-32" />
       </Link>
 
       <div className="min-w-0 flex-1">

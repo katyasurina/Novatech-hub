@@ -51,6 +51,7 @@ import {
 } from '../api/admin';
 import { fetchProductDetail } from '../api/product';
 import { isApiClientError } from '../api/client';
+import { mediaUrl } from '../lib/media';
 import { useAuthStore } from '../stores/auth';
 import { toast } from '../stores/toast';
 import { formatDate, formatMoney, formatRating, timeAgo } from '../lib/format';
@@ -562,7 +563,7 @@ function ProductsTab() {
                   <tr key={row.id} className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-900/40">
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-3">
-                        <ProgressiveImage src={row.imageUrl} alt="" className="h-10 w-10 shrink-0 rounded-lg object-cover" />
+                        <ProgressiveImage src={mediaUrl(row.imageUrl)} alt="" className="h-10 w-10 shrink-0 rounded-lg object-cover" />
                         <Link
                           to={`/p/${row.slug}`}
                           className="focus-ring max-w-56 truncate font-medium text-ink hover:text-indigo-600 dark:hover:text-indigo-300"
@@ -980,7 +981,7 @@ function ModerationTab() {
             return (
               <li key={item.id} className={cn('card p-4 transition-opacity', suspended && 'opacity-80')}>
                 <div className="flex items-start gap-3">
-                  <Avatar src={item.author.avatarUrl} alt={item.author.username} size="sm" className="mt-0.5" />
+                  <Avatar src={mediaUrl(item.author.avatarUrl)} alt={item.author.username} size="sm" className="mt-0.5" />
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
                       <p className="text-sm font-medium text-ink">{item.author.username}</p>

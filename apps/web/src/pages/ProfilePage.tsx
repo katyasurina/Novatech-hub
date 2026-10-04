@@ -7,6 +7,7 @@ import { REVIEW_SORTS, type ReviewSort } from '@novatech/shared';
 import { fetchProfile, fetchUserReviews, updateProfile, uploadAvatar } from '../api/users';
 import { deleteReview } from '../api/reviews';
 import { isApiClientError } from '../api/client';
+import { mediaUrl } from '../lib/media';
 import { useAuthStore } from '../stores/auth';
 import { toast } from '../stores/toast';
 import { formatDate } from '../lib/format';
@@ -108,7 +109,7 @@ export function ProfilePage() {
       <header className="card relative overflow-hidden p-6">
         <div className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-indigo-500/10 blur-3xl" aria-hidden="true" />
         <div className="relative flex flex-col items-center gap-4 text-center sm:flex-row sm:items-start sm:text-left">
-          <Avatar src={user.avatarUrl} alt={user.name ?? user.username} size="lg" className="ring-2 ring-indigo-200 dark:ring-indigo-900" />
+          <Avatar src={mediaUrl(user.avatarUrl)} alt={user.name ?? user.username} size="lg" className="ring-2 ring-indigo-200 dark:ring-indigo-900" />
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-start">
               <h1 className="text-xl font-bold text-ink">{user.name ?? user.username}</h1>
@@ -362,7 +363,7 @@ function ProfileReviewRow({
         to={`/p/${product.slug}`}
         className="focus-ring flex items-center gap-3 rounded-xl border border-line bg-surface-raised p-3 transition-colors hover:border-indigo-400"
       >
-          <ProgressiveImage src={product.imageUrl} alt={product.name} className="h-12 w-12 rounded-lg object-cover" />
+          <ProgressiveImage src={mediaUrl(product.imageUrl)} alt={product.name} className="h-12 w-12 rounded-lg object-cover" />
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-medium text-ink">{product.name}</p>
           <p className="text-xs text-ink-faint">{CATEGORY_LABELS[product.category]}</p>

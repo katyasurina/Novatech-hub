@@ -9,6 +9,7 @@ import { Badge } from '../ui/Badge';
 import { RatingDisplay } from '../ui/Ratings';
 import { WishlistButton } from './WishlistButton';
 import { ProgressiveImage } from '../ui/ProgressiveImage';
+import { mediaUrl } from '../../lib/media';
 
 interface ProductCardProps {
   product: CatalogProduct;
@@ -26,7 +27,7 @@ export function ProductCard({ product, className, footer }: ProductCardProps) {
     product;
 
   const [imageFailed, setImageFailed] = useState(false);
-  const src = imageUrl && !imageFailed ? imageUrl : PLACEHOLDER_IMAGE;
+  const src = imageUrl && !imageFailed ? mediaUrl(imageUrl) : PLACEHOLDER_IMAGE;
 
   return (
     <Link

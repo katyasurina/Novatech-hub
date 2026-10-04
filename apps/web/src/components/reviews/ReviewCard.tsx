@@ -8,6 +8,7 @@ import { useAuthStore } from '../../stores/auth';
 import { toast } from '../../stores/toast';
 import { timeAgo } from '../../lib/format';
 import { cn } from '../../lib/cn';
+import { mediaUrl } from '../../lib/media';
 import { Avatar } from '../ui/Avatar';
 import { Badge } from '../ui/Badge';
 
@@ -81,7 +82,7 @@ export function ReviewCard({ review, productId, canModify, onEdit, onDelete }: R
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-center gap-3">
           <Link to={`/u/${author.username}`} className="focus-ring shrink-0 rounded-full" aria-label={`View ${author.username}'s profile`}>
-            <Avatar src={author.avatarUrl} alt={author.name ?? author.username} size="md" />
+            <Avatar src={mediaUrl(author.avatarUrl)} alt={author.name ?? author.username} size="md" />
           </Link>
           <div>
             <Link to={`/u/${author.username}`} className="focus-ring text-sm font-semibold text-ink hover:text-indigo-600 dark:hover:text-indigo-300">

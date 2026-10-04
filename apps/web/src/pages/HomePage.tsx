@@ -11,6 +11,7 @@ import { RatingDisplay } from '../components/ui/Ratings';
 import { ScoreBreakdown } from '../components/product/ScoreBreakdown';
 import { Button } from '../components/ui/Button';
 import { ProgressiveImage } from '../components/ui/ProgressiveImage';
+import { mediaUrl } from '../lib/media';
 import { formatMoney } from '../lib/format';
 import { cn } from '../lib/cn';
 import { motion } from 'framer-motion';
@@ -89,7 +90,7 @@ export function HomePage() {
               {bestSeller ? (
                 <div className="flex items-center gap-3">
                   <ProgressiveImage
-                    src={bestSeller.imageUrl}
+                    src={mediaUrl(bestSeller.imageUrl)}
                     alt={bestSeller.name}
                     className="h-16 w-16 rounded-xl ring-1 ring-line transition-transform duration-300 group-hover:scale-105"
                   />
@@ -121,7 +122,7 @@ export function HomePage() {
               className="card flex flex-col gap-5 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-card-hover dark:hover:border-indigo-700 sm:flex-row"
             >
               <Link to={`/p/${p.slug}`} className="focus-ring shrink-0">
-                <ProgressiveImage src={p.imageUrl} alt={p.name} className="h-32 w-full rounded-xl sm:w-44" />
+                <ProgressiveImage src={mediaUrl(p.imageUrl)} alt={p.name} className="h-32 w-full rounded-xl sm:w-44" />
               </Link>
               <div className="min-w-0 flex-1">
                 <div className="flex items-start justify-between gap-2">

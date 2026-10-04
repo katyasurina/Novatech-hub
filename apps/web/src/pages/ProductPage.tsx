@@ -8,6 +8,7 @@ import { fetchProductDetail, fetchReviews } from '../api/product';
 import { deleteReview } from '../api/reviews';
 import { deleteReviewAsAdmin } from '../api/admin';
 import { isApiClientError } from '../api/client';
+import { mediaUrl } from '../lib/media';
 import { useAuthStore } from '../stores/auth';
 import { toast } from '../stores/toast';
 import { joinProductRoom, leaveProductRoom, onReviewCreated } from '../lib/socket';
@@ -151,7 +152,7 @@ export function ProductPage() {
   // Safe to non-null-assert: the `!product` early return above guarantees data.
   const summary = detail.data!.summary;
   // Plain computation now that product is known non-null (post early-return).
-  const gallery = [product.imageUrl, ...product.galleryUrls.filter((u) => u !== product.imageUrl)];
+  const gallery = [mediaUrl(product.imageUrl), ...product.galleryUrls.filter((u) => u !== product.imageUrl).map(mediaUrl)];
 
   const totalReviewPages = reviews.data?.totalPages ?? 0;
 
@@ -186,7 +187,7 @@ export function ProductPage() {
         <div className="min-w-0">
           <figure className="card overflow-hidden">
             <div className="relative aspect-[4/3] bg-slate-100 dark:bg-slate-800">
-              <ProgressiveImage src={gallery[galleryIndex]} alt={product.name} className="h-full w-full object-cover" onError={(e) => { e.currentTarget.src = product.imageUrl; }} />
+              <ProgressiveImage src={gallery[galleryIndex]} alt={product.name} className="h-full w-full object-cover" onError={(e) => { e.currentTarget.src = mediaUrl(product.imageUrl); }} />
             </div>
           </figure>
 

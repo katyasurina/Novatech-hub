@@ -6,6 +6,7 @@ import { useThemeStore, useIsDark } from '../../stores/theme';
 import { logout as logoutRequest } from '../../api/auth';
 import { queryClient } from '../../lib/queryClient';
 import { toast } from '../../stores/toast';
+import { mediaUrl } from '../../lib/media';
 import { Avatar } from '../ui/Avatar';
 import { cn } from '../../lib/cn';
 
@@ -152,7 +153,7 @@ function UserMenu() {
         className="focus-ring ml-1 flex h-9 w-9 items-center justify-center rounded-full"
         aria-label={`Account menu for ${username}`}
       >
-        <Avatar src={user.avatarUrl} alt={user.name ?? username} size="sm" />
+        <Avatar src={mediaUrl(user.avatarUrl)} alt={user.name ?? username} size="sm" />
       </button>
 
       {open && (
