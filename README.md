@@ -2,8 +2,8 @@
 
 A production-grade, community-driven gadget review & rating platform. Think "write honest reviews, earn the trust of the crowd" — ratings are **computed live from the database**, never faked, never cached.
 
-> **🔗 Live:** [novatech-hub.vercel.app](https://novatech-hub.vercel.app)  
-> **📦 Code:** [github.com/katyasurina/Novatech-hub](https://github.com/katyasurina/Novatech-hub)
+> **Live:** [novatech-hub.vercel.app](https://novatech-hub.vercel.app)  
+> **Сode:** [github.com/katyasurina/Novatech-hub](https://github.com/katyasurina/Novatech-hub)
 
 ![NovaTech Hub home](./docs/screenshots/01-hero.png)
 
