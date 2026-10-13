@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { Bookmark, Moon, Search, Settings, Sun, User as UserIcon, LogOut, Shell, Menu, X } from 'lucide-react';
+import { Bookmark, Moon, Search, Settings, Sun, User as UserIcon, LogOut, Shell } from 'lucide-react';
 import { useAuthStore } from '../../stores/auth';
 import { useThemeStore, useIsDark } from '../../stores/theme';
 import { logout as logoutRequest } from '../../api/auth';
@@ -9,7 +9,6 @@ import { toast } from '../../stores/toast';
 import { Avatar } from '../ui/Avatar';
 import { cn } from '../../lib/cn';
 import { mediaUrl } from '../../lib/media';
-import { MobileMenuDrawer } from './MobileMenuDrawer';
 
 const NAV = [
   { to: '/catalog', label: 'Catalog' },
@@ -23,7 +22,6 @@ export function Header() {
   const isDark = useIsDark();
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -97,23 +95,9 @@ export function Header() {
             {isDark ? <Sun className="h-5 w-5" aria-hidden="true" /> : <Moon className="h-5 w-5" aria-hidden="true" />}
           </button>
 
-          {/* Mobile hamburger menu */}
-          <button
-            type="button"
-            className="md:hidden focus-ring flex h-9 w-9 items-center justify-center rounded-lg text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink dark:hover:bg-slate-800"
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={mobileMenuOpen}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
-          </button>
-
           {user ? <UserMenu /> : <SignInLink />}
         </div>
       </div>
-
-      {/* Mobile drawer menu */}
-      <MobileMenuDrawer isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} user={user} />
     </header>
   );
 }
