@@ -134,7 +134,7 @@ export function HomePage() {
                   </span>
                 </div>
                 <p className="mt-1 text-sm leading-relaxed text-ink-muted">{p.tagline}</p>
-                <ScoreBreakdown product={p} className="mt-3 hidden border-0 p-0 shadow-none sm:block" />
+                <ScoreBreakdown product={p} compact className="mt-2 border-0 p-0 shadow-none" />
               </div>
             </div>
           ))}
