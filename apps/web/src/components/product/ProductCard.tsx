@@ -37,14 +37,14 @@ export function ProductCard({ product, className, footer }: ProductCardProps) {
         className,
       )}
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-900 dark:to-slate-800">
+      <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-gray-800">
         <ProgressiveImage
           src={src}
           alt={name}
           onError={() => {
             if (imageUrl && !imageFailed) setImageFailed(true);
           }}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="h-full w-full object-contain sm:object-cover transition-transform duration-500 group-hover:scale-105"
         />
         {/* Hover gradient sheen */}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/0 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

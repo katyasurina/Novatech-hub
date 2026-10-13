@@ -186,8 +186,8 @@ export function ProductPage() {
         {/* Gallery + description */}
         <div className="min-w-0">
           <figure className="card overflow-hidden">
-            <div className="relative aspect-[4/3] bg-slate-100 dark:bg-slate-800">
-              <ProgressiveImage src={gallery[galleryIndex]} alt={product.name} className="h-full w-full object-cover" onError={(e) => { e.currentTarget.src = mediaUrl(product.imageUrl); }} />
+            <div className="relative aspect-[4/3] bg-gray-100 dark:bg-gray-800">
+              <ProgressiveImage src={gallery[galleryIndex]} alt={product.name} className="h-full w-full object-contain sm:object-cover" onError={(e) => { e.currentTarget.src = mediaUrl(product.imageUrl); }} />
             </div>
           </figure>
 

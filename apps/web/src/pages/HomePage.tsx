@@ -66,7 +66,7 @@ export function HomePage() {
       {/* Featured */}
       {data.featured.length > 0 && (
         <Section title="Featured this week" icon={<Sparkles className="h-4 w-4" aria-hidden="true" />} linkTo="/catalog" linkLabel="See all">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {data.featured.map((p) => (
               <ProductCard key={p.id} product={toCatalogProduct(p)} />
             ))}
@@ -154,10 +154,10 @@ function Hero() {
         <img
           src="/media/hero-bg.jpg"
           alt=""
-          className="h-full w-full object-cover object-right"
+          className="h-full w-full object-cover object-right sm:object-center"
         />
-        {/* Dark gradient from left to transparent on right — for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+        {/* Dark overlay stronger on left (text area), lighter on right (products visible) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20 sm:from-black/80 sm:via-black/50 sm:to-transparent" />
       </div>
 
       {/* Content — left-aligned */}
