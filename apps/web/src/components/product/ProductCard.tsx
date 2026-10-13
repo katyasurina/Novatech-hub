@@ -69,9 +69,9 @@ export function ProductCard({ product, className, footer }: ProductCardProps) {
           <div className="flex items-center gap-1.5">
             <RatingDisplay value={averageRating} showDenominator={false} />
             <span className="text-sm tabular-nums text-ink-faint">({reviewCount})</span>
-            <MessageSquare className="ml-1 h-3.5 w-3.5 text-ink-faint" aria-hidden="true" />
+            <MessageSquare className="hidden sm:block ml-1 h-3.5 w-3.5 shrink-0 text-ink-faint" aria-hidden="true" />
           </div>
-          <span className="text-base font-bold tabular-nums text-ink">
+          <span className="ml-auto shrink-0 text-sm font-bold tabular-nums text-ink sm:text-base">
             {formatMoney(priceMinor, currency)}
           </span>
         </div>
