@@ -74,7 +74,7 @@ export function TrendingPage() {
       </header>
 
       {/* Mobile-first 2-column grid */}
-      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-2">
+      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
         {data.map((product, index) => (
           <TrendingCard key={product.id} product={product} rank={index + 1} />
         ))}
@@ -124,7 +124,7 @@ function TrendingCard({ product, rank }: { product: TrendingProduct; rank: numbe
         </div>
       </div>
 
-      {/* ProductCard for the image/text */}
+      {/* Shared ProductCard with correct aspect — image stays proportional */}
       <ProductCard product={toCatalogProduct(product)} className="border-0 shadow-none hover:-translate-y-0" />
 
       {/* Breakdown always visible below card (2-col layout, readable) */}
