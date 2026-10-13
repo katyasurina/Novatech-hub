@@ -115,11 +115,11 @@ export function HomePage() {
       </Section>
 
       <Section title="Trending now" icon={<TrendingUp className="h-4 w-4" aria-hidden="true" />} linkTo="/trending" linkLabel="See all">
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-2">
           {data.trending.map((p) => (
             <div
               key={p.id}
-              className="card flex flex-col gap-5 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-card-hover dark:hover:border-indigo-700 sm:flex-row"
+              className="card flex flex-col gap-3 p-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-card-hover dark:hover:border-indigo-700 sm:gap-5 sm:flex-row sm:p-5"
             >
               <Link to={`/p/${p.slug}`} className="focus-ring shrink-0">
                 <ProgressiveImage src={mediaUrl(p.imageUrl)} alt={p.name} className="h-32 w-full rounded-xl sm:w-44" />
@@ -134,7 +134,7 @@ export function HomePage() {
                   </span>
                 </div>
                 <p className="mt-1 text-sm leading-relaxed text-ink-muted">{p.tagline}</p>
-                <ScoreBreakdown product={p} className="mt-3 border-0 p-0 shadow-none" />
+                <ScoreBreakdown product={p} className="mt-3 hidden border-0 p-0 shadow-none sm:block" />
               </div>
             </div>
           ))}
