@@ -23,23 +23,23 @@ export function ScoreBreakdown({ product, className, compact }: { product: Trend
   return (
     <div className={cn('card', compactClass, className)}>
       <div className="flex items-center justify-between">
-        <h3 className={cn('flex items-center gap-2 font-semibold text-ink', compact ? 'text-[10px]' : 'text-sm')}>
-          <TrendingUp className={cn('text-indigo-500', compact ? 'h-3 w-3' : 'h-4 w-4')} aria-hidden="true" />
+        <h3 className={cn('flex items-center gap-2 font-semibold text-ink', compact ? 'text-sm' : 'text-sm')}>
+          <TrendingUp className={cn('text-indigo-500', compact ? 'h-4 w-4' : 'h-4 w-4')} aria-hidden="true" />
           Why it&rsquo;s trending
         </h3>
-        <span className={cn('font-bold tabular-nums text-indigo-600 dark:text-indigo-300', compact ? 'text-sm' : 'text-2xl')}>
+        <span className={cn('font-bold tabular-nums text-indigo-600 dark:text-indigo-300', compact ? 'text-lg' : 'text-2xl')}>
           {score.toFixed(1)}
         </span>
       </div>
 
-      <div className={cn('space-y-2', !compact && 'mt-4 space-y-3')}>
+      <div className={cn('space-y-3', !compact && 'mt-4 space-y-3')}>
         {components.map((c) => (
           <div key={c.label}>
-            <div className={cn('flex items-baseline justify-between', compact ? 'text-[10px]' : 'text-xs')}>
+            <div className={cn('flex items-baseline justify-between', compact ? 'text-xs' : 'text-xs')}>
               <span className="font-medium text-ink">{c.label}</span>
-              <span className={cn('tabular-nums text-ink-muted', compact ? 'text-[9px]' : 'text-xs')}>{c.value.toFixed(3)}</span>
+              <span className={cn('tabular-nums text-ink-muted', compact ? 'text-xs' : 'text-xs')}>{c.value.toFixed(3)}</span>
             </div>
-            <div className={cn('mt-0.5 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800', compact ? 'h-1' : 'mt-1 h-1.5')}>
+            <div className={cn('mt-0.5 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800', compact ? 'h-1.5' : 'mt-1 h-1.5')}>
               <div
                 className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 transition-all duration-500"
                 style={{ width: pct(c.value) }}
