@@ -1,5 +1,4 @@
 import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TrendingUp } from 'lucide-react';
 import type { TrendingProduct } from '@novatech/shared';
@@ -75,7 +74,7 @@ export function TrendingPage() {
       </header>
 
       {/* Mobile-first 2-column grid */}
-      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-2">
         {data.map((product, index) => (
           <TrendingCard key={product.id} product={product} rank={index + 1} />
         ))}
@@ -85,7 +84,6 @@ export function TrendingPage() {
 }
 
 function TrendingCard({ product, rank }: { product: TrendingProduct; rank: number }) {
-  const [expanded, setExpanded] = useState(false);
   const toCatalogProduct = (t: TrendingProduct) => ({
     id: t.id,
     slug: t.slug,
@@ -129,22 +127,9 @@ function TrendingCard({ product, rank }: { product: TrendingProduct; rank: numbe
       {/* ProductCard for the image/text */}
       <ProductCard product={toCatalogProduct(product)} className="border-0 shadow-none hover:-translate-y-0" />
 
-      {/* Breakdown shown on mobile below the card (Option A, collapsed by default) */}
-      <div className="border-t border-line">
-        <button
-          type="button"
-          onClick={() => setExpanded((e) => !e)}
-          className="focus-ring flex w-full items-center justify-between px-3 py-2 text-xs font-medium text-ink-muted transition-colors hover:text-ink"
-          aria-expanded={expanded}
-        >
-          <span>Why it&rsquo;s trending</span>
-          <span className={cn('text-xs transition-transform', expanded && 'rotate-180')}>▼</span>
-        </button>
-        {expanded && (
-          <div className="px-3 pb-3">
-            <ScoreBreakdown product={product} className="border-0 shadow-none p-0 bg-transparent dark:bg-transparent" />
-          </div>
-        )}
+      {/* Breakdown always visible below card (2-col layout, readable) */}
+      <div className="border-t border-line px-3 pt-2 pb-3">
+        <ScoreBreakdown product={product} className="border-0 shadow-none p-0 bg-transparent dark:bg-transparent" />
       </div>
     </div>
   );

@@ -48,7 +48,7 @@ export function ScoreBreakdown({ product, className }: { product: TrendingProduc
         ))}
       </div>
 
-      <p className="mt-4 flex items-start gap-1.5 border-t border-line pt-3 text-[11px] text-ink-faint">
+      <p className="mt-4 hidden sm:flex items-start gap-1.5 border-t border-line pt-3 text-[11px] text-ink-faint">
         <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
         <span>{scoreBreakdown.formula}</span>
       </p>
