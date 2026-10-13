@@ -154,10 +154,10 @@ function Hero() {
         <img
           src="/media/hero-bg.jpg"
           alt=""
-          className="h-full w-full object-cover object-right sm:object-center"
+          className="h-full w-full object-cover object-[70%_center] sm:object-center"
         />
         {/* Dark overlay stronger on left (text area), lighter on right (products visible) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20 sm:from-black/80 sm:via-black/50 sm:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-transparent sm:from-black/80 sm:via-black/50 sm:to-transparent" />
       </div>
 
       {/* Content — left-aligned */}
