@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TrendingUp } from 'lucide-react';
 import type { TrendingProduct } from '@novatech/shared';
@@ -6,28 +7,17 @@ import { fetchTrending } from '../api/home';
 import { CATEGORY_LABELS } from '@novatech/shared';
 import { SkeletonList } from '../components/ui/Skeleton';
 import { ErrorState } from '../components/ui/ErrorState';
-import { mediaUrl } from '../lib/media';
 import { EmptyState } from '../components/ui/EmptyState';
 import { ScoreBreakdown } from '../components/product/ScoreBreakdown';
-import { RatingDisplay } from '../components/ui/Ratings';
 import { BackButton } from '../components/ui/BackButton';
-import { ProgressiveImage } from '../components/ui/ProgressiveImage';
+import { ProductCard } from '../components/product/ProductCard';
 import { formatMoney } from '../lib/format';
 import { cn } from '../lib/cn';
 
 const MEDAL = ['🥇', '🥈', '🥉'] as const;
-const Medal = ({ rank }: { rank: number }) => {
-  if (rank < 1 || rank > 3) return null;
-  return <span className="text-lg" aria-hidden="true">{MEDAL[rank - 1]}</span>;
-};
 
 const TRENDING_LIMIT = 24;
 
-/**
- * The leaderboard. Rank is the DB-computed trending score (0–10, higher = more
- * worth your attention right now), and every row expands to the exact formula
- * breakdown the server used — rating quality, review volume and recency.
- */
 export function TrendingPage() {
   const { data, isLoading, isError, refetch } = useQuery({
     queryKey: ['trending', TRENDING_LIMIT],
@@ -56,7 +46,7 @@ export function TrendingPage() {
   }
 
   return (
-    <div className="mx-auto max-w-5xl animate-fade-in px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-7xl animate-fade-in px-4 py-8 sm:px-6">
       <BackButton className="mb-4" />
 
       <header className="relative overflow-hidden rounded-2xl border border-line bg-gradient-to-br from-indigo-500/10 via-transparent to-amber-500/10 p-6 sm:p-8 dark:from-indigo-950/50 dark:to-amber-950/30">
@@ -84,24 +74,42 @@ export function TrendingPage() {
         </div>
       </header>
 
-      <ol className="mt-8 space-y-4">
+      {/* Mobile-first 2-column grid */}
+      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {data.map((product, index) => (
-          <li key={product.id}>
-            <TrendingRow product={product} rank={index + 1} />
-          </li>
+          <TrendingCard key={product.id} product={product} rank={index + 1} />
         ))}
-      </ol>
+      </div>
     </div>
   );
 }
 
-function TrendingRow({ product, rank }: { product: TrendingProduct; rank: number }) {
+function TrendingCard({ product, rank }: { product: TrendingProduct; rank: number }) {
+  const [expanded, setExpanded] = useState(false);
+  const toCatalogProduct = (t: TrendingProduct) => ({
+    id: t.id,
+    slug: t.slug,
+    name: t.name,
+    tagline: t.tagline,
+    category: t.category,
+    brand: t.brand,
+    priceMinor: t.priceMinor,
+    currency: t.currency,
+    imageUrl: t.imageUrl,
+    featured: false,
+    releaseDate: null,
+    createdAt: new Date(0),
+    averageRating: t.averageRating,
+    reviewCount: t.reviewCount,
+  });
+
   return (
-    <article className="card flex flex-col gap-4 p-4 sm:flex-row sm:items-start">
-      <div className="flex items-center gap-3 sm:w-16 sm:flex-col sm:items-center">
+    <div className="card overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-card-hover dark:hover:border-brand-700">
+      {/* Rank badge */}
+      <div className="flex items-center gap-2 px-3 pt-3">
         <span
           className={cn(
-            'flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-sm font-bold tabular-nums',
+            'flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-xs font-bold tabular-nums',
             rank === 1
               ? 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300'
               : rank <= 3
@@ -112,43 +120,32 @@ function TrendingRow({ product, rank }: { product: TrendingProduct; rank: number
         >
           #{rank}
         </span>
-        <span className="hidden sm:block">{rank <= 3 && <Medal rank={rank} />}</span>
+        {rank <= 3 && <span className="text-base" aria-hidden="true">{MEDAL[rank - 1]}</span>}
+        <div className="ml-auto flex items-center gap-1 rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-bold tabular-nums text-indigo-600 dark:bg-indigo-950 dark:text-indigo-300">
+          {product.score.toFixed(1)}
+        </div>
       </div>
 
-      <Link to={`/p/${product.slug}`} className="focus-ring block shrink-0">
-        <ProgressiveImage src={mediaUrl(product.imageUrl)} alt={product.name} className="h-24 w-full rounded-lg sm:w-32" />
-      </Link>
+      {/* ProductCard for the image/text */}
+      <ProductCard product={toCatalogProduct(product)} className="border-0 shadow-none hover:-translate-y-0" />
 
-      <div className="min-w-0 flex-1">
-        <div className="flex flex-wrap items-start justify-between gap-2">
-          <div className="min-w-0">
-            <p className="text-xs text-ink-faint">
-              {CATEGORY_LABELS[product.category]} · {product.brand}
-            </p>
-            <Link
-              to={`/p/${product.slug}`}
-              className="focus-ring mt-0.5 block font-semibold text-ink hover:text-indigo-600 dark:hover:text-indigo-300"
-            >
-              {product.name}
-            </Link>
-            <p className="truncate text-sm text-ink-muted">{product.tagline}</p>
+      {/* Breakdown shown on mobile below the card (Option A, collapsed by default) */}
+      <div className="border-t border-line">
+        <button
+          type="button"
+          onClick={() => setExpanded((e) => !e)}
+          className="focus-ring flex w-full items-center justify-between px-3 py-2 text-xs font-medium text-ink-muted transition-colors hover:text-ink"
+          aria-expanded={expanded}
+        >
+          <span>Why it&rsquo;s trending</span>
+          <span className={cn('text-xs transition-transform', expanded && 'rotate-180')}>▼</span>
+        </button>
+        {expanded && (
+          <div className="px-3 pb-3">
+            <ScoreBreakdown product={product} className="border-0 shadow-none p-0 bg-transparent dark:bg-transparent" />
           </div>
-          <div className="text-right">
-            <p className="text-xl font-bold tabular-nums text-indigo-600 dark:text-indigo-300">
-              {product.score.toFixed(1)}
-            </p>
-            <p className="text-xs text-ink-faint">trending score</p>
-          </div>
-        </div>
-
-        <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-ink-muted">
-          <RatingDisplay value={product.averageRating} className="text-sm" />
-          <span>{product.reviewCount} reviews</span>
-          <span className="font-medium text-ink">{formatMoney(product.priceMinor, product.currency)}</span>
-        </div>
-
-        <ScoreBreakdown product={product} className="mt-3 border-0 bg-slate-50 p-3 shadow-none dark:bg-slate-800/50" />
+        )}
       </div>
-    </article>
+    </div>
   );
 }
