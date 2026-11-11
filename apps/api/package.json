@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx watch --clear-screen=false src/index.ts",
     "start": "node dist/index.js",
-    "build": "prisma generate && tsup",
+    "build": "prisma generate && npx tsup",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "pg:start": "tsx scripts/pg.ts start",
