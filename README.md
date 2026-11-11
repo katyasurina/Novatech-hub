@@ -32,7 +32,7 @@ A production-grade, community-driven gadget review & rating platform. Think "wri
 - **Fully shareable catalog** — search, category, min-rating, min/max price, sort, and pagination all live in the URL query string.
 - **Admin studio** — product CRUD + a review moderation queue (suspend/restore/hard-delete), Recharts dashboard, all behind a role guard.
 - **Wishlists, profiles & avatars** — per-user saves, public profile pages with stats, avatar uploads.
-- **Deployed and live** — frontend on Vercel (CDN), API on Railway, database on Neon (serverless Postgres).
+- **Deployed and live** — frontend on Vercel (CDN), API on Render, database on Neon (serverless Postgres).
 
 ---
 
@@ -60,7 +60,7 @@ A production-grade, community-driven gadget review & rating platform. Think "wri
 
 **Backend** — Node 20 · TypeScript 5 · Express 4 · Prisma 5 · PostgreSQL 16 · Zod · Socket.IO · JWT (access + refresh) · bcryptjs · multer · helmet
 
-**Infrastructure** — Docker (local Postgres) · Neon (production Postgres) · Railway (API) · Vercel (frontend) · GitHub (CI on push)
+**Infrastructure** — Docker (local Postgres) · Neon (production Postgres) · Render (API) · Vercel (frontend) · GitHub (CI on push)
 
 ---
 
@@ -93,10 +93,12 @@ Production runs on a three-service architecture:
 | Layer       | Service                          | URL                                              |
 | ----------- | -------------------------------- | ------------------------------------------------ |
 | Frontend    | [Vercel](https://vercel.com)     | `https://novatech-hub.vercel.app`                |
-| API         | [Railway](https://railway.app)   | `https://novatechapi-production.up.railway.app`  |
+| API         | [Render](https://render.com)   | `https://novatech-hub-crxx.onrender.com`  |
 | Database    | [Neon](https://neon.tech)        | serverless Postgres, Frankfurt (eu-central-1)    |
 
-Every push to `main` triggers automatic redeploys on both Vercel and Railway.
+Every push to `main` triggers automatic redeploys on both Vercel and Render.
+
+> **Note:** The Render API runs on the free tier and spins down after 15 minutes of inactivity. The first request after a cold start may take up to 50 seconds. Subsequent requests are fast.
 
 ---
 
